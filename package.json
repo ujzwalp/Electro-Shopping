@@ -1,0 +1,35 @@
+{
+  "name": "electro-shopping",
+  "version": "1.0.0",
+  "description": "This is e-commerce website where people can purchase any electronics device like mobile phones, laptops, tablet and many more.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "npx parcel public/index.html --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ujzwalp/Electro-Shopping.git"
+  },
+  "keywords": [
+    "e-commerce",
+    "shopping",
+    "electronics"
+  ],
+  "author": "ujzwalp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ujzwalp/Electro-Shopping/issues"
+  },
+  "homepage": "https://github.com/ujzwalp/Electro-Shopping#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@parcel/resolver-glob": "^2.12.0",
+    "@parcel/transformer-image": "^2.12.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 150px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.cart-image {
+  width: 65px;
+  height: 65px;
+  /* margin-top: 20px; */
+  border-radius: 5px;
+  margin: 0px;
+}
+
+.company-name {
+  font-weight: bolder;
+  font-size: xx-large;
+  position: absolute;
+  top: 130px;
+  left: 35px;
+}
+
+.cart-quantity {
+  position: absolute;
+  font-weight: bolder;
+  font-size: larger;
+  left: 195px;
+  top: 80px;
+}
+
+.cart-button {
+  padding: 0px;
+  width: 68px;
+  height: 68px;
+  border: none;
+  border-radius: 50%;
+}
+
+.electronic-item {
+  background-color: cadetblue;
+  width: 400px;
+  height: 430px;
+  margin: 40px;
+  margin-top: 30px;
+}
+
+.product-image {
+  width: 384px;
+  height: 300px;
+  border: none;
+  border-radius: 5px;
+}
+
+.electronic {
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-column-gap: 20px;
+  padding: 20px;
+}
+
+.company-image {
+  width: 50px;
+}
+
+.container3 {
+  width: 200px;
+  height: 50px;
+}
+
+.grid-element {
+  margin: 20px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #f8f9fa;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.footer-top {
+  background-color: #343a40;
+  color: #fff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.footer-top h4 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer-top p {
+  font-size: 14px;
+}
+
+.footer-top ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-top ul li {
+  margin-bottom: 10px;
+}
+
+.footer-top ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-top ul li a:hover {
+  color: #ccc;
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-media li a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-media li a:hover {
+  color: #ccc;
+}
+
+.footer-bottom {
+  background-color: #343a40;
+  color: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.footer-bottom p {
+  margin-bottom: 0;
+}
