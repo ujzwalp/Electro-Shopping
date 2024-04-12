@@ -2,6 +2,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .logo {
@@ -75,6 +78,77 @@
 
 .grid-element {
   margin: 20px;
+}
+
+.quantity-button {
+  background-color: chocolate;
+  width: 68px;
+}
+
+.decrease {
+  background-color: red;
+  width: 30px;
+}
+
+.increase {
+  background-color: greenyellow;
+  width: 30px;
+}
+
+.modal {
+  width: 65vw;
+  height: 100vh;
+  overflow-y: hidden;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.modal [open] {
+  animation: slide-in-from-top 0.35s ease-out;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.item-image {
+  width: 600px;
+  height: 550px;
+  border-radius: 20px;
+  position: absolute;
+  left: 150px;
+}
+
+.left {
+  position: absolute;
+  left: 45px;
+  top: 265px;
+}
+
+.right {
+  position: absolute;
+  bottom: 300px;
+  left: 800px;
+}
+
+.slide {
+  width: 50px;
+  height: 50px;
+  font-weight: bolder;
+  border: none;
+  font-size: 50px;
+}
+
+.close {
+  position: absolute;
+  left: 820px;
+  width: 60px;
+  border: none;
+  border-radius: 3px;
+  background-color: orangered;
 }
 
 /* Footer Styles */

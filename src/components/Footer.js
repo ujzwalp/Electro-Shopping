@@ -1,19 +1,19 @@
 const Footer = () => {
   return (
     <footer>
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3 col-sm-6">
+      <div className="footer-top">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3 col-sm-6">
               <h4>About Us</h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
                 nec odio. Praesent libero.
               </p>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div className="col-md-3 col-sm-6">
               <h4>Quick Links</h4>
-              <ul class="list-unstyled">
+              <ul className="list-unstyled">
                 <li>
                   <a href="#">Home</a>
                 </li>
@@ -28,42 +28,42 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div className="col-md-3 col-sm-6">
               <h4>Contact Info</h4>
-              <ul class="list-unstyled">
+              <ul className="list-unstyled">
                 <li>
-                  <i class="fa fa-map-marker"></i> 123 Main Street, City,
+                  <i className="fa fa-map-marker"></i> 123 Main Street, City,
                   Country
                 </li>
                 <li>
-                  <i class="fa fa-phone"></i> +123-456-7890
+                  <i className="fa fa-phone"></i> +123-456-7890
                 </li>
                 <li>
-                  <i class="fa fa-envelope"></i> info@example.com
+                  <i className="fa fa-envelope"></i> info@example.com
                 </li>
               </ul>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div className="col-md-3 col-sm-6">
               <h4>Follow Us</h4>
-              <ul class="list-unstyled social-media">
+              <ul className="list-unstyled social-media">
                 <li>
                   <a href="#">
-                    <i class="fab fa-facebook"></i>
+                    <i className="fab fa-facebook"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fab fa-twitter"></i>
+                    <i className="fab fa-twitter"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fab fa-instagram"></i>
+                    <i className="fab fa-instagram"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fab fa-linkedin"></i>
+                    <i className="fab fa-linkedin"></i>
                   </a>
                 </li>
               </ul>
@@ -71,11 +71,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <p class="text-center">
+      <div className="footer-bottom">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <p className="text-center">
                 &copy; 2024 Electronic Store. All rights reserved.
               </p>
             </div>

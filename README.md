@@ -9,3 +9,5 @@ Note: I'm doind this project to understand the working of useContext() and useRe
 -upon clicking a item, a modal window should pop-up on top of home screen. Modal windows should contain different angle images of the same device with option to swipe across those images.
 -upon adding the item, cart value should be added and item should be displayed in the cart as well.
 -This page is designed only for the purpose of the revisiting and learning the above concepts and not from great visuals perspective. Efforts to make it look visually good may be put later when the primary goals of this project is kicked.
+
+<!-- continue from Modal -->
