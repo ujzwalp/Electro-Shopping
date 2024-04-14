@@ -43,6 +43,7 @@
   height: 68px;
   border: none;
   border-radius: 50%;
+  background-color: red;
 }
 
 .electronic-item {
@@ -112,6 +113,70 @@
 
 .modal::backdrop {
   background: rgba(0, 0, 0, 0.9);
+}
+
+.cartModal {
+  width: 55vw;
+  height: 90vh;
+  /* overflow-y: hidden; */
+  overflow-x: hidden;
+  margin: auto;
+  padding: 65px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.cartModal [open] {
+  animation: slide-in-from-top 0.35s ease-out;
+}
+
+.cartModal::backdrop {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.close-cartModal {
+  position: absolute;
+  left: 700px;
+  top: 20px;
+  width: 60px;
+  height: 30px;
+  border: none;
+  background-color: rgb(245, 193, 193);
+  border-radius: 10%;
+}
+
+.sub-total {
+  font-weight: bolder;
+  text-align: right;
+  margin-right: 30px;
+}
+
+.cart-item {
+  width: 45vw;
+  height: auto;
+  overflow-y: hidden;
+  margin-top: 10px;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.cartItem-image {
+  width: 80px;
+  height: 80px;
+  /* margin: 3px; */
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex {
+  margin-top: 25px;
 }
 
 .item-image {

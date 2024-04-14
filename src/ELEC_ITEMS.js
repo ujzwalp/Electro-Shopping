@@ -10,7 +10,7 @@ const ELECT_ITEMS = [
     company: Object.entries(images1)
       .filter((image) => image[0].includes("apple"))
       .map((subArray) => subArray[1]),
-    price: "₹1,48,900",
+    price: "1,48,900",
     specs: [
       "iPhone 15 Pro Max",
       "6.7-inch Super Retina XDR display",
@@ -38,7 +38,7 @@ const ELECT_ITEMS = [
     company: Object.entries(images1)
       .filter((image) => image[0].includes("apple"))
       .map((subArray) => subArray[1]),
-    price: " ₹1,54,990",
+    price: "1,54,990",
     specs: [
       "MacBook Pro (2023)",
       "16-inch Liquid Retina XDR display",
@@ -65,7 +65,7 @@ const ELECT_ITEMS = [
     company: Object.entries(images1)
       .filter((image) => image[0].includes("apple"))
       .map((subArray) => subArray[1]),
-    price: " ₹89,900",
+    price: "89,900",
     specs: [
       "iPad Pro 11 (2023)",
       "11-inch Liquid Retina display with ProMotion technology",
@@ -92,7 +92,7 @@ const ELECT_ITEMS = [
     company: Object.entries(images1)
       .filter((image) => image[0].includes("sony"))
       .map((subArray) => subArray[1]),
-    price: "₹26,990",
+    price: "26,990",
     specs: [
       "Sony WH-1000XM5",
       "Over-ear, closed-back",
@@ -119,7 +119,7 @@ const ELECT_ITEMS = [
     company: Object.entries(images1)
       .filter((image) => image[0].includes("samsung"))
       .map((subArray) => subArray[1]),
-    price: "₹1,54,999",
+    price: "1,54,999",
     specs: [
       "Samsung Galaxy Z Fold5 5G",
       "7.6 inches Dynamic AMOLED 2X, 120Hz",
@@ -150,7 +150,7 @@ const ELECT_ITEMS = [
     company: Object.entries(images1)
       .filter((image) => image[0].includes("samsung"))
       .map((subArray) => subArray[1]),
-    price: "₹1,39,999",
+    price: "1,39,999",
     specs: [
       "Samsung Galaxy S24 Ultra 5G AI Smartphone",
       "6.9 inches Dynamic AMOLED 2X, 120Hz",
@@ -178,7 +178,7 @@ const ELECT_ITEMS = [
     company: Object.entries(images1)
       .filter((image) => image[0].includes("fitbit"))
       .map((subArray) => subArray[1]),
-    price: "₹18,449",
+    price: "18,449",
     specs: [
       "Fitbit Versa 4 Fitness Watch",
       "1.58 inches AMOLED display",
@@ -206,7 +206,7 @@ const ELECT_ITEMS = [
     company: Object.entries(images1)
       .filter((image) => image[0].includes("keychron"))
       .map((subArray) => subArray[1]),
-    price: "₹21,249",
+    price: "21,249",
     specs: [
       "Keychron Q3 Wired Custom Mechanical Keyboard",
       "Choice of various mechanical switches (e.g., Gateron, Cherry MX)",
@@ -228,7 +228,7 @@ const ELECT_ITEMS = [
     company: Object.entries(images1)
       .filter((image) => image[0].includes("logitech"))
       .map((subArray) => subArray[1]),
-    price: "₹8,995",
+    price: "8,995",
     specs: [
       "Logitech MX Master 3S",
       "Wireless (Bluetooth or USB receiver)",

@@ -46,9 +46,6 @@ const Modal = forwardRef((props, ref) => {
       <button className="left slide" onClick={changeImageHandler}>
         &lt;
       </button>
-      {/* <div className="item-images">
-        
-      </div> */}
       <img src={imageSourceState} alt="modal-images" className="item-image" />
       <button className="right slide" onClick={changeImageHandler}>
         &gt;

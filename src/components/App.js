@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import ELECT_ITEMS from "../ELEC_ITEMS";
 import Header from "./Header";
 import Electronic from "./Electronic";
@@ -7,14 +7,12 @@ import Modal from "./Modal";
 
 const App = () => {
   const [modalItemState, setModalItemState] = useState();
+  const [cartState, setCartState] = useState([]);
   const dialogRef = useRef();
 
-  const liftedModalItemhandler = (liftedItem) => {
+  const openModalHanlder = (liftedItem) => {
     setModalItemState(liftedItem);
-    modalHandlerOpen();
-  };
-
-  const modalHandlerOpen = () => {
+    dialogRef.current.setModalImage(liftedItem.id);
     dialogRef.current.open();
   };
 
@@ -22,8 +20,44 @@ const App = () => {
     dialogRef.current.close();
   };
 
-  const InitialMoalImage = (itemId) => {
-    dialogRef.current.setModalImage(itemId);
+  const addItemToCart = (cartProductInfo) => {
+    setCartState((prevState) => {
+      return [...prevState, cartProductInfo];
+    });
+  };
+
+  const removeItemFromCart = (cartProductInfo) => {
+    let occurence = 0;
+
+    cartState.forEach((item) => {
+      if (item.id === cartProductInfo.id) occurence += 1;
+    });
+
+    if (occurence > 1) {
+      const cartStateUpdate = cartState.filter(
+        (item) => item.id !== cartProductInfo.id
+      );
+      setCartState([...cartStateUpdate, cartProductInfo]);
+    } else if (occurence === 1) {
+      const cartStateUpdate = cartState.filter(
+        (item) => item.id !== cartProductInfo.id
+      );
+      setCartState(cartStateUpdate);
+    } else {
+      return;
+    }
+  };
+
+  const subTotalCalc = () => {
+    let subTotal = 0;
+
+    if (cartState) {
+      cartState.forEach(
+        (item) => (subTotal += Number(item.price.replaceAll(",", "")))
+      );
+    }
+
+    return subTotal;
   };
 
   return (
@@ -33,11 +67,12 @@ const App = () => {
         ref={dialogRef}
         onClose={modalHandlerClose}
       />
-      <Header />
+      <Header cartItem={cartState} subTotal={subTotalCalc()} />
       <Electronic
         items={ELECT_ITEMS}
-        startModalImage={InitialMoalImage}
-        onLiftModalItem={liftedModalItemhandler}
+        onSetModal={openModalHanlder}
+        onSetCartAddModal={addItemToCart}
+        onSetCartRemoveModal={removeItemFromCart}
       />
       <Footer />
     </div>

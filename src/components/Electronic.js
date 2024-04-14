@@ -7,8 +7,9 @@ const Electronic = (props) => {
         <ElectronicItem
           key={item.id}
           item={item}
-          onliftModal={props.onLiftModalItem}
-          startModalImage={props.startModalImage}
+          onSetModal={props.onSetModal}
+          onSetCartAddModal={props.onSetCartAddModal}
+          onSetCartRemoveModal={props.onSetCartRemoveModal}
         />
       ))}
       ;
