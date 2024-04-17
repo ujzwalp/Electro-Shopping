@@ -43,16 +43,26 @@ const Modal = forwardRef((props, ref) => {
 
   return createPortal(
     <dialog className="modal" ref={diaglogRefChange}>
-      <button className="left slide" onClick={changeImageHandler}>
-        &lt;
-      </button>
-      <img src={imageSourceState} alt="modal-images" className="item-image" />
-      <button className="right slide" onClick={changeImageHandler}>
-        &gt;
-      </button>
-      <button className="close" onClick={props.onClose}>
+      <button
+        className="close"
+        onClick={props.onClose}
+        onKeyDown={props.onClose}
+      >
         close
       </button>
+      <div className="flex-mdoal">
+        <button className="left slide pos-child" onClick={changeImageHandler}>
+          &lt;
+        </button>
+        <img
+          src={imageSourceState}
+          alt="modal-images"
+          className="item-image pos-child"
+        />
+        <button className="right slide pos-child" onClick={changeImageHandler}>
+          &gt;
+        </button>
+      </div>
     </dialog>,
     document.getElementById("modal")
   );

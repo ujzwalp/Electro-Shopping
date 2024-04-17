@@ -16,8 +16,9 @@ const App = () => {
     dialogRef.current.open();
   };
 
-  const modalHandlerClose = () => {
-    dialogRef.current.close();
+  const modalHandlerClose = (event) => {
+    if (event.target.innerHTML === "close" || event.code === "Escape")
+      dialogRef.current.close();
   };
 
   const addItemToCart = (cartProductInfo) => {
@@ -37,7 +38,15 @@ const App = () => {
       const cartStateUpdate = cartState.filter(
         (item) => item.id !== cartProductInfo.id
       );
-      setCartState([...cartStateUpdate, cartProductInfo]);
+      for (
+        let updateProductQuantity = 1;
+        updateProductQuantity <= occurence - 1;
+        updateProductQuantity++
+      ) {
+        cartStateUpdate.push(cartProductInfo);
+      }
+
+      setCartState([...cartStateUpdate]);
     } else if (occurence === 1) {
       const cartStateUpdate = cartState.filter(
         (item) => item.id !== cartProductInfo.id

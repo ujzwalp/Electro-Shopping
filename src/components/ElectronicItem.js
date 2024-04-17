@@ -29,24 +29,24 @@ const ElectronicItem = (props) => {
   };
 
   return (
-    <div className="electronic-item">
-      <button className="product-image-button" id={props.item.id}>
-        <img
-          src={props.item.images[0]}
-          className="product-image"
-          onClick={itemModalHandler}
-        />
-      </button>
+    <div className="electronic-item" id={props.item.id}>
+      {/* <button className="product-image-button" > */}
+      <img
+        src={props.item.images[0]}
+        className="product-image"
+        onClick={itemModalHandler}
+      />
+      {/* </button> */}
       <div className="container">
-        <div className="container1">{props.item.name}</div>
-        <div className="container2">Price: ₹{props.item.price}</div>
+        <div className="container1 childBox">{props.item.name}</div>
+        <div className="container2 childBox">Price: ₹{props.item.price}</div>
 
-        <div className="container4">
+        <div className="container3 childBox">
           <img src={props.item.company} className="company-image" />
         </div>
-        <div className="quantity-button">
+        <div className="quantity-button childBox">
           <button
-            className="decrease"
+            className="decrease set-quantity"
             onClick={simulateProductInfoHandler}
             id={`${props.item.id}dec`}
           >
@@ -54,7 +54,7 @@ const ElectronicItem = (props) => {
           </button>
           <span className="quantity">1</span>
           <button
-            className="increase"
+            className="increase set-quantity"
             onClick={simulateProductInfoHandler}
             id={`${props.item.id}inc`}
           >

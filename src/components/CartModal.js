@@ -20,7 +20,10 @@ const CartModal = forwardRef((props, ref) => {
     <dialog className="cartModal" ref={ref}>
       <button
         className="close-cartModal"
-        onClick={(event) => event.target.parentElement.close()}
+        onClick={(event) => {
+          if (event.target.innerHTML === "close" || event.code === "Escape")
+            event.target.parentElement.close();
+        }}
       >
         close
       </button>
