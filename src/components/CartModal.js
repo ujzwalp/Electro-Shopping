@@ -1,19 +1,22 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useContext } from "react";
 import CartItem from "./CartItem";
 import { createPortal } from "react-dom";
+import { ModalCartContext } from "../store/modal-state-context";
 
 const CartModal = forwardRef((props, ref) => {
+  const cartCtx = useContext(ModalCartContext);
+
   const quantityCalc = (itemId) => {
     let occurence = 0;
 
-    props.cartItem.forEach((item) => {
+    cartCtx.cartItem.forEach((item) => {
       if (item.id === itemId) occurence += 1;
     });
 
     return occurence;
   };
 
-  const uniqueCartItemsString = new Set(props.cartItem.map(JSON.stringify));
+  const uniqueCartItemsString = new Set(cartCtx.cartItem.map(JSON.stringify));
   const uniqueCartItems = Array.from(uniqueCartItemsString).map(JSON.parse);
 
   return createPortal(
@@ -39,7 +42,7 @@ const CartModal = forwardRef((props, ref) => {
       <hr />
       <div className="sub-total">
         SUBTOTAL:{" "}
-        {props.subTotal.toLocaleString("en-IN", {
+        {cartCtx.subTotal.toLocaleString("en-IN", {
           style: "currency",
           currency: "INR",
         })}

@@ -1,9 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useMemo } from "react";
 import ELECT_ITEMS from "../ELEC_ITEMS";
 import Header from "./Header";
 import Electronic from "./Electronic";
 import Footer from "./Footer";
 import Modal from "./Modal";
+import { ModalCartContext } from "../store/modal-state-context";
 
 const App = () => {
   const [modalItemState, setModalItemState] = useState();
@@ -69,22 +70,25 @@ const App = () => {
     return subTotal;
   };
 
+  const appCtxValue = {
+    item: modalItemState,
+    cartItem: cartState,
+    subTotal: subTotalCalc(),
+    onSetModal: openModalHanlder,
+    onSetCartAddModal: addItemToCart,
+    onSetCartRemoveModal: removeItemFromCart,
+    onClose: modalHandlerClose,
+  };
+
   return (
-    <div className="app">
-      <Modal
-        item={modalItemState}
-        ref={dialogRef}
-        onClose={modalHandlerClose}
-      />
-      <Header cartItem={cartState} subTotal={subTotalCalc()} />
-      <Electronic
-        items={ELECT_ITEMS}
-        onSetModal={openModalHanlder}
-        onSetCartAddModal={addItemToCart}
-        onSetCartRemoveModal={removeItemFromCart}
-      />
-      <Footer />
-    </div>
+    <ModalCartContext.Provider value={appCtxValue}>
+      <div className="app">
+        <Modal ref={dialogRef} />
+        <Header />
+        <Electronic items={ELECT_ITEMS} />
+        <Footer />
+      </div>
+    </ModalCartContext.Provider>
   );
 };
 

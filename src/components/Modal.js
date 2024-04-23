@@ -1,12 +1,21 @@
-import { forwardRef, useImperativeHandle, useRef, useState } from "react";
+import {
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useState,
+  useContext,
+} from "react";
+import { ModalCartContext } from "../store/modal-state-context";
 import ELECT_ITEMS from "../ELEC_ITEMS";
 import { createPortal } from "react-dom";
 
 const Modal = forwardRef((props, ref) => {
+  const modalCtx = useContext(ModalCartContext);
+
   const [imageSourceState, setImageSourceState] = useState();
   const diaglogRefChange = useRef();
 
-  const length = props.item?.images.length;
+  const length = modalCtx.item?.images.length;
 
   const imageValRef = useRef(1);
 
@@ -31,13 +40,13 @@ const Modal = forwardRef((props, ref) => {
     if (event.target.innerHTML === "&lt;") {
       imageValRef.current -= 1;
       if (imageValRef.current < 0) imageValRef.current = length - 1;
-      setImageSourceState(props.item.images[imageValRef.current]);
+      setImageSourceState(modalCtx.item.images[imageValRef.current]);
     }
 
     if (event.target.innerHTML === "&gt;") {
       imageValRef.current += 1;
       if (imageValRef.current >= length) imageValRef.current = 0;
-      setImageSourceState(props.item.images[imageValRef.current]);
+      setImageSourceState(modalCtx.item.images[imageValRef.current]);
     }
   };
 
@@ -45,8 +54,8 @@ const Modal = forwardRef((props, ref) => {
     <dialog className="modal" ref={diaglogRefChange}>
       <button
         className="close"
-        onClick={props.onClose}
-        onKeyDown={props.onClose}
+        onClick={modalCtx.onClose}
+        onKeyDown={modalCtx.onClose}
       >
         close
       </button>

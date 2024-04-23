@@ -1,39 +1,16 @@
 import electron from "../../assets/companyLogoResize.png";
 import cart from "../../assets/cartImageResize.png";
 import CartModal from "./CartModal";
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+import { ModalCartContext } from "../store/modal-state-context";
 
 const Header = (props) => {
   const cartRef = useRef();
-
-  // return (
-  //   <header>
-  //     <CartModal
-  //       cartItem={props.cartItem}
-  //       subTotal={props.subTotal}
-  //       ref={cartRef}
-  //     />
-  //     <span>
-  //       <img src={electron} alt="" className="logo" />
-  //       <span className="company-name">Electro</span>
-  //     </span>
-  //     <button
-  //       className="cart-button"
-  //       onClick={() => cartRef.current.showModal()}
-  //     >
-  //       <span className="cart-quantity">{props.cartItem?.length}</span>
-  //       <img src={cart} alt="cart" className="cart-image" />
-  //     </button>
-  //   </header>
-  // );
+  const cartCtx = useContext(ModalCartContext);
 
   return (
     <header className="headerFlex">
-      <CartModal
-        cartItem={props.cartItem}
-        subTotal={props.subTotal}
-        ref={cartRef}
-      />
+      <CartModal ref={cartRef} />
       <div>
         <img src={electron} alt="" className="logo" />
         <p className="company-name">Electro</p>
@@ -42,7 +19,7 @@ const Header = (props) => {
         className="cart-button"
         onClick={() => cartRef.current.showModal()}
       >
-        <p className="cart-quantity">{props.cartItem?.length}</p>
+        <p className="cart-quantity">{cartCtx.cartItem?.length}</p>
         <img src={cart} alt="cart" className="cart-image" />
       </button>
     </header>

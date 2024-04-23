@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import ELECT_ITEMS from "../ELEC_ITEMS";
+import { ModalCartContext } from "../store/modal-state-context";
 
 const ElectronicItem = (props) => {
+  const electronicCtx = useContext(ModalCartContext);
   const itemModalHandler = (event) => {
     const [itemToLift] = ELECT_ITEMS.filter(
       (item) => item.id == event.target.parentElement.id
     );
-    props.onSetModal(itemToLift);
+    electronicCtx.onSetModal(itemToLift);
   };
 
   const simulateProductInfoHandler = (event) => {
@@ -14,14 +17,14 @@ const ElectronicItem = (props) => {
     const [itemToLift] = ELECT_ITEMS.filter((item) => item.id == eventId);
 
     if (event.target.id.slice(-3) === "inc") {
-      props.onSetCartAddModal({
+      electronicCtx.onSetCartAddModal({
         operation: event.target.id.slice(-3),
         ...itemToLift,
       });
     }
 
     if (event.target.id.slice(-3) === "dec") {
-      props.onSetCartRemoveModal({
+      electronicCtx.onSetCartRemoveModal({
         operation: event.target.id.slice(-3),
         ...itemToLift,
       });
